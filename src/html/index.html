@@ -1,0 +1,176 @@
+<html>
+<head>
+	<title>Transcriptor-Home</title>
+	
+	<link rel="shortcut icon" href="./background/Java.ico" type="image/icon">
+	<link rel="icon" href="./background/Java.ico" type="image/icon">
+	
+	<link href="./css/background.css" rel="stylesheet" type="text/css" />
+	<link href="./css/newfont.css" rel="stylesheet" type="text/css" />
+	
+	<style type="text/css">
+		#backgroundfont {
+			font-family: "Comic Sans MS", cursive, sans-serif;
+			font-size: 15px;
+		}
+		
+		.box {
+			position:absolute;
+			width:440px;
+			height:340px;
+			left:425px;
+			top:80px;
+			padding-top : 20px;
+			padding-left : 80px;
+			 
+			margin:100px auto 0 auto;
+			
+			border-radius: 10px 10px 10px 10px;
+			-moz-border-radius: 10px 10px 10px 10px;
+			-webkit-border-radius: 10px 10px 10px 10px;
+			border: 1px solid #6F6F6F;
+			
+			-webkit-box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.75);
+			-moz-box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.75);
+			box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.75);
+			
+			background: rgba(183,214,171,1);
+			background: -moz-linear-gradient(-55deg, rgba(183,214,171,1) 0%, rgba(209,199,142,1) 100%);
+			background: -webkit-gradient(left top, right top, color-stop(0%, rgba(183,214,171,1)), color-stop(100%, rgba(209,199,142,1)));
+			background: -webkit-linear-gradient(-55deg, rgba(183,214,171,1) 0%, rgba(209,199,142,1) 100%);
+			background: -o-linear-gradient(-55deg, rgba(183,214,171,1) 0%, rgba(209,199,142,1) 100%);
+			background: -ms-linear-gradient(-55deg, rgba(183,214,171,1) 0%, rgba(209,199,142,1) 100%);
+			background: linear-gradient(125deg, rgba(183,214,171,1) 0%, rgba(209,199,142,1) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7d6ab', endColorstr='#d1c78e', GradientType=1 );
+		}
+		
+		
+		select {
+    		padding:3px;
+    		margin: 0;
+    		-webkit-border-radius:5px;
+    		-moz-border-radius:5px;
+    		border-radius:5px;
+    		
+    		-webkit-box-shadow: inset 0 0 30px #000000;
+    		-moz-box-shadow: inset 0 0 30px #000000;
+    		box-shadow: inset 0 0 30px #797979;
+    		
+    		background: #FFFFFF;
+    		color:#000000;
+    		border:1px solid #68696C;
+    		
+    		outline:none;
+   	 		-moz-appearance:none;
+    		appearance:none;
+    		cursor:pointer;
+		}
+		
+		select:hover{
+			border:1px solid #5C85FF;
+		}
+	
+		.custom-file-input::-webkit-file-upload-button {
+  			visibility: hidden;
+		}
+	
+		.custom-file-input::before {
+  			content: 'Browse File';
+  			display: inline-block;
+  			background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  			border: 1px solid #999;
+  			border-radius: 5px;
+  			padding: 4px 3px;
+  			outline: none;
+  			white-space: nowrap;
+  			-webkit-user-select: none;
+  			cursor: pointer;
+  			text-shadow: 1px 1px #fff;
+  			font-weight: 700;
+  			font-size: 10pt;
+		}
+		
+		.custom-file-input:hover::before {
+  			border-color: #5C85FF;
+		}
+		.custom-file-input:active::before {
+  			background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+		}
+		
+		
+		input#gobutton{
+			cursor:pointer;
+			padding:5px 25px; 
+			background:#35b128; 
+			border:1px solid #33842a;
+
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+			border-radius: 10px;
+
+			-webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
+			-moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
+			box-shadow: 0 0 4px rgba(0,0,0, .75);
+
+			color:#f3f3f3;
+			font-size:12px;
+		}
+
+
+		input#gobutton:hover, input#gobutton:focus{
+			background-color :#399630;
+			-webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
+			-moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
+			box-shadow: 0 0 1px rgba(0,0,0, .75);
+		}
+		
+	</style>
+</head>
+
+<body id="background">
+	<p class="customfont" style=" font-size:40px; text-align:center">ONLINE TRANSCRIPTOR<br /> </p>
+    
+    <div class="box">
+    	<span id="backgroundfont"> 
+			<form action="http://localhost:8080/test-app/upload" 
+					enctype="multipart/form-data" method="POST">
+			
+			
+			<p>
+				Please specify a file : &nbsp <br><br>
+				<input type="file" name="datafile" class="custom-file-input">
+			</p>	
+			
+			<br>
+			
+			<p>
+				Input Language : &nbsp
+				<select name = "InputLang">
+					<option selected> --Select--</option>
+  					<option value="English">ENGLISH</option>
+  					<option value="Bengali">BENGALI</option>
+				</select>
+			</p>
+						
+			<br>	
+						
+			<p>
+				Output format : &nbsp
+				<select name = "OutputFormat">
+					<option selected> --Select--</option>
+  					<option value="html">HTML</option>
+  					<option value="pdf">PDF</option>
+  					<option value="doc">DOC</option>
+				</select>
+			</p>
+			
+			<br>
+			
+			<input id="gobutton" type="submit" value="Transcript" class="button">
+			
+			</form>
+    	</span>
+    </div>
+    
+</body>
+</html>
