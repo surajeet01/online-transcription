@@ -6,6 +6,3 @@ This repository contains files related to Final Year Project on "Development of 
 Dapartment of Computer Science and Technology
 Indian Institute of Engineering Science and Technology, Shibpur,
 Howrah - 711103
-
-
-Contact : sushmita.sen.edu@gmail.com, surajeet01@gmail.com
